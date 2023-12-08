@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="Layout/fragmentos :: fcabecera"></head>
+    <body class="sb-nav-fixed">
+        <nav th:replace="Layout/fragmentos ::fnav"></nav>
+        <div id="layoutSidenav">
+            <div th:replace="Layout/fragmentos ::fmenu"></div>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <!--Tabla-->
+                        <br><br>
+                        <div class="card">
+                            <div class="card-header">
+                                <strong> <i class="fa-solid fa-suitcase fa-lg" style="color: black;"></i> TOURS REGISTRADOS</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Descripción</th>
+                                                <th>Destino</th>
+                                                <th>Precio</th>
+                                                <th>Imagen Referencial</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item : ${listaTours}">
+                                                <td th:text="${item.tour_id}"></td>
+                                                <td th:text="${item.tour_nombre}"></td>
+                                                <td th:text="${item.tour_descripcion}"></td>
+                                                <td th:text="${item.tour_destino}"></td>
+                                                <td th:text="${item.tour_precio}"></td>
+                                                <td>
+                                                    <img style="width: auto; height:100px;"
+                                                         th:src="'data:image/jpg;base64,' + ${item.tour_imagen}"
+                                                         alt="Imagen referencial del vuelo"/>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-warning botonEditar"
+                                                    th:data-tour_id="${item.tour_id}"
+                                                    th:data-tour_nombre="${item.tour_nombre}"
+                                                    th:data-tour_descripcion="${item.tour_descripcion}"
+                                                    th:data-tour_destino="${item.tour_destino}"
+                                                    th:data-tour_precio="${item.tour_precio}"
+                                                    th:data-tour_imagen="${item.tour_imagen}">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        Editar
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger" th:href="@{/tour/eliminar/} + ${item.tour_id}" onclick="return confirm('¿Desea eliminar el tour seleccionado?')">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Eliminar</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin de Tabla-->
+                    </div>
+                </main>
+                <footer th:replace="Layout/fragmentos :: ffooter"></footer>
+            </div>
+            <!-- Modal -->
+    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Tour</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form th:action="@{/tour/guardar}" th:object="${tour}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <!-- Texto -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <input type="hidden" name="tour_id" id="tour_id"/>
+                            <label>Nombre del Tour:</label>
+                            <input type="text" name="tour_nombre" id="txtNombre" class="form-control" placeholder="Ingrese nombre"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Descripción del Tour:</label>
+                            <input type="text" name="tour_descripcion" id="txtDescripcion" class="form-control" placeholder="Ingrese descripción"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Destino del Tour:</label>
+                            <input type="text" name="tour_destino" id="txtDestino" class="form-control" placeholder="Ingrese destino"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Imagen Referencial</label>
+                            <input id="txtImagen" name="file" accept="image/*" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Precio del Tour:</label>
+                            <input type="number" name="tour_precio" id="txtPrecio" class="form-control" placeholder="Ingrese precio"/>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-ban"></i>
+                            Cancelar
+                        </button>
+                            <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Guardar Cambios
+                        </button>
+                    </div>
+            </form>               
+        </div>
+        </div>
+    </div>
+        </div>
+        <div th:replace="Layout/fragmentos :: flibrerias"></div>
+        <script th:src="@{/js/libreriaTour.js}"></script>
+    </body>
+</html>
+

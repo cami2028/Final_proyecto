@@ -1,0 +1,395 @@
+/*ENCABEZADO- NAVEGACION*/
+.menu{
+    background-color: #000000;
+    font-family: "Josefin Sans";
+    padding: -150px;
+    font-size: 18px;
+}
+
+.menu ul li a{
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 0 22.5px !important;
+}
+
+.menu ul li a:hover{
+    color: rgb(230, 218, 196) !important;
+    
+}
+
+.logo{
+    
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo small{
+    display: block;
+    font-size: 18px;
+}
+
+.logo:hover{
+  color: rgb(230, 218, 196) !important;
+}
+nav{
+    padding: 0 0 !important;
+}
+
+.container_logo {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0); /*color de texto*/
+    text-align: bold;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+ /*Estilo Logo IMAGEN*/
+
+ .logo_img {
+     
+        max-width: 200px; /* Ajusta el tamaño del logo según tus necesidades */
+        margin-right: 0px; /* Espacio entre el logo y el texto */
+        margin-bottom: -60px;
+        margin-left: -70px;
+        margin-top: -40px;
+      
+  }
+
+  .colorinicio {
+    color: #fff;
+  }
+
+/* Estilos de pie de página */
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+
+#map {
+    height: 300px;
+    width:70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    margin-bottom: 60px;
+  }
+
+
+.mptexto{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    color: rgb(0, 0, 0) !important;
+    letter-spacing: 4px;
+}
+
+.colormap { 
+    background-color: #ffffff;
+}
+
+.copy {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.ft{
+    margin-top: 30px;
+    margin-right: 70px;
+    transform: translate(10%, 0%);
+    
+}
+
+.espacio{
+    letter-spacing: 20px;
+}
+
+.ft a:hover{
+    color:rgb(230, 218, 196) !important;
+}
+
+.footertext {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Mallqui*/
+ /*letras del carrusel*/
+  /*imagen 1*/
+  .mover{
+    top: 25%;
+  }
+  .mover h5{
+    text-align: left;
+    font-size: 65px;
+  }
+
+  .mover h5 span{
+    display: inline-block;
+    color: #e6bb8a;
+    font-weight: bold;
+  }
+
+  .mover p{
+    text-align: left;
+    top: -20px;
+    font-size: 20px;
+  }
+
+  .mover2{
+    top: 25%;
+  }
+  .mover2 h5{
+    text-align: left;
+    font-size: 65px;
+  }
+
+  .mover2 h5 span{
+    display: inline-block;
+    color: #e6bb8a;
+    font-weight: bold;
+  }
+
+  .mover2 p{
+    text-align: left;
+    top: -20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .mover3{
+    top: 25%;
+  }
+  .mover3 h5{
+    text-align: left;
+    font-size: 65px;
+  }
+
+  .mover3 h5 span{
+    display: inline-block;
+    color: #e6bb8a;
+    font-weight: bold;
+  }
+
+  .mover3 p{
+    text-align: left;
+    top: -20px;
+    font-size: 20px;
+  }
+
+  .carousel-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad del 50% */
+}
+
+/*CAMILA y FAVIO*/
+.about {
+  padding-top: 50px !important;
+  padding: 90px 0px;
+  padding-left: 200px;
+}
+.titlepage h2 {
+  padding: 0px 0px 10px 10px;/*CENTRAMOS EL TEXTO Y DAMOS ESPACIO CON LA IMAGEN*/
+  font-size: 50px;
+  font-weight: bold;
+  color: #050303;
+  line-height: 50px;
+  text-transform: uppercase;/*CONVIERTE TODO EL TEXTO EN MAYUSCULA*/
+  position: relative;
+  display: inline-block;
+}
+.titlepage h2::before {/*CREAR LA LINEA DEL LADO IZQUIERDO DEL TEXTO:ACERCA DE*/
+  right: 100%;
+  margin-right: 20px;
+}
+.titlepage h2::after {/*CREAR LA LINEA DEL LADO DERECHO DEL TEXTO:ACERCA DE*/
+  left: 100%;
+  margin-left: 20px;
+}
+.titlepage h2::before,
+.titlepage h2::after {/*CREAR COLOR DE LA LINEA DEL COSTADO DEL TEXTO:ACERCA DE*/
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 5px solid #13aba6;/*GROSOR DE LA LINEA CREADA*/
+  top: 27px;
+  width: 290px;
+}
+
+.about .about-box p { /*CREAR EL RECUADRO DEL TEXTO DE ACERCA DE*/
+  font-size: 17px;
+  line-height: 32px;
+  color: #141012;
+  position: relative;
+  margin: 50px auto;
+  display: inline-block;
+  padding: 60px 25px;
+  border-left: 15px solid #077f9b;
+  border-right: 15px solid #0c1e43;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 20px;
+  -moz-background-size: 100% 20px;
+  background-size: 100% 20px;
+  background-image: -webkit-linear-gradient(left, #077f9b 0%, #0c1e43 100%), -webkit-linear-gradient(left, #077f9b 0%, #0c1e43 100%);
+  background-image: -moz-linear-gradient(left, #077f9b 0%, #0c1e43 100%), -moz-linear-gradient(left, #077f9b 0%);
+  background-image: -o-linear-gradient(left, #077f9b 0%, #0c1e43 100%), -o-linear-gradient(left, #077f9b 0%, #0c1e43 100%);
+  background-image: linear-gradient(to right, #077f9b 0%, #0c1e43 100%), linear-gradient(to right, #077f9b 0%, #0c1e43 100%);
+  max-width: 1004px;
+}
+.about .about-box p span {/*MANTENER EL TEXTO DENTRO DEL RECUADRO Y ALINEADO*/
+  display: inline-block;
+  padding-right: 360px;
+}
+.palne-img-area {/*IMAGEN DEL AVION*/
+  position: relative;
+  margin-top: -500px;
+  margin-left: 580px;
+  margin-bottom: -80px;
+}
+
+/*Seccion Traveling*/
+.traveling {
+  padding-top: 70px !important;
+  padding: 50px 0px;
+  padding-left: 360px;
+}
+.posicion_iconos{
+  padding-right: 30px;
+}
+.traveling-box {
+  padding: 20px 20px 0px 5px;
+  text-align: center;
+}
+.traveling-box h3 {
+  padding-top: 20px;
+  font-size: 25px;
+  line-height: 31px;
+  color: #100808;
+}
+
+/* Estilos para la imagen */
+.ajuste1 {
+    position: relative;
+    margin-top:20px;/*espacio entre la imagen y el carrusel*/
+    margin-bottom: 20px;
+    width: 80%; /* Ancho en porcentaje */
+    height: 80%; /* Mantener la relación de aspecto original */
+    margin-left: -230px;
+
+}
+
+/*Eduardo Aracely*/
+  /* Estilos de secciones */
+  section {
+    padding: 40px 80px;
+    text-align: center;
+    background-color: #f9f9f9 ;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+  }
+  
+  section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+   /*Color de la letra : "Acerca de Nuestras Mascotas y Nuestros" */
+   .custom_heading {
+    color: #030404;
+  }
+  
+  /*Color de la letra : "Clínica y Servicios" */
+  .custom_heading span {
+    color: rgb(219, 156, 97);
+  }
+
+  /*Seccion de Servicios- Sirve para el fondo, de forma circular*/
+  .service_section .img_box {
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    background-color: rgb(219, 156, 97);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+    /*Seccion de Servicios- Posicion del fondo e imagen*/
+    .service_section .row .col-md-4 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: center;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+      }
+
+        
+  /*Seccion de Servicios- Sirve para el espacio entre la letra y la imagen*/
+  .service_section .detail_box {
+    margin-top: 25px;
+  }
+  
+  /*Seccion de Servicios- Sirve para poner en negrita los subtittulos*/
+  .service_section .detail_box h6 {
+    font-weight: bold;
+  }
+  
+  .avionsito{
+    font-size: 45px;
+    color: white;
+  }
+
+  .hotelsito{
+    font-size: 45px;
+    color: white;
+  }
+
+  .toursito{
+    font-size: 45px;
+    color: white;
+  }
+
+  .activado{
+    color: white !important;
+}

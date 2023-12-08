@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de viajes</title>
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" th:href="@{/css/contacto.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/28e0b35790.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script th:src="@{/JS/index.js}"></script>    
+</head>
+
+<body >
+    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+        </div>
+        <div class="container-fluid menu">
+                <a class="navbar-brand logo" th:href="@{/}">ADVENTOURS</a>
+                <img src="Imagenes/LOGO.3.png" alt="Logo" class="logo_img">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Vuelos}">VUELOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Hoteles}">HOTELES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Tours}">TOURS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Contacto}">CONTACTO</a>
+              </li>
+            </ul>
+          </div>
+         </div>
+      </nav>
+<!-- CONTÁCTANOS -->
+<section >
+  <div class="banner-main">
+     <img  th:src="@{/Imagenes/banner.jpg}" alt="#" style="max-width: 100%; height: auto;"/>
+     <div class="container contacto_form">
+        <div class="text-bg">
+           <h1>CONTÁCTANOS</h1>
+           <div class="container">
+              <form class="main-form" th:action="@{/Contacto/guardar}" th:object="${contacto}" method="post">
+                 <div class="row">
+                    <div class="col-md-9">
+                       <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                          <label class="text_h3">Nombre de Solicitante</label>
+                          <input th:field="*{contacto_nombre}" class="form-control" placeholder="Ingreso el Nombre" type="text" >
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                           <label class="text_h3">Apellido de Solicitante</label>
+                           <input th:field="*{contacto_apellido}" class="form-control" placeholder="Ingreso el Apellido" type="text">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                           <label class="text_h3">DNI</label>
+                           <input th:field="*{contacto_dni}" class="form-control" placeholder="Ingreso DNI" type="text" >
+                        </div>                           
+                        
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                          <label class="text_h3">Correo</label>
+                          <input th:field="*{contacto_correo}" class="form-control" placeholder="Escribe un Correo" type="text" >
+                       </div>
+                       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <label class="text_h3">Teléfono</label>
+                        <input th:field="*{contacto_numero}" class="form-control" placeholder="Ingresa telefono de Referencia" type="number" >
+                       </div>
+                       
+                       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <label class="text_h3">Asunto:</label>
+                        <textarea th:field="*{contacto_asunto}" id="mensaje" placeholder="Ingresa un Mensaje(opcional)" name="mensaje"></textarea>
+                       </div>
+                    </div>
+                    <button class="btn" type="submit">Enviar</button>
+                 </div>
+              </form>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+  <!-- final seccion servicio -->
+        <!-- Mapa -->
+          <div class="container-fluid colormap">
+            <div class="row">
+              <p class="mptexto">Encuéntranos en...</p>
+              <div id="map"></div>
+            </div>
+          </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      <!-- Pie de página 
+-->
+<footer>
+  <div class="container-fluid">
+    
+    <div class="row">
+      <div class="col-3 ft">
+        <p class="footertext">Acerca de</p>
+        <a class="nav-link mb-3" href="#">Terminos y condiciones</a>
+        <a class="nav-link" href="#">Información legal</a>
+      </div>
+      <div class="col-3 ft">
+        <p class="footertext">
+          Contacto</p>
+        <p>agenciadeviajes@correo.com</p>
+        <p>Av. Tingo María 1122, Lima 15083</p>
+      </div>
+      
+      <div class="col-3 ft">
+        <p class="footertext">Redes sociales</p>
+        <a class="fa-brands fa-facebook fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-x-twitter fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-instagram fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-tiktok fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-whatsapp fa-2xl nav-link espacio" href=""></a>
+      </div>
+      <p class="copy">&copy; 2023 Agencia de viajes. Todos los derechos reservados.</p>
+      <a th:href="@{/Login}"><span class="fa-solid fa-right-to-bracket fa-2xl"></span> ¿Eres parte de nosotros?</a>
+    </div>
+  </div>
+</footer>
+</body>
+<script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+          defer
+        ></script>
+</html>

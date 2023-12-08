@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="Layout/fragmentos :: fcabecera"></head>
+    <body class="sb-nav-fixed">
+        <nav th:replace="Layout/fragmentos ::fnav"></nav>
+        <div id="layoutSidenav">
+            <div th:replace="Layout/fragmentos ::fmenu"></div>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <!--Tabla LISTA DE HOTELES REGISTRADOS-->
+                        <br><br>
+                        <div class="card">
+                            <div class="card-header">
+                                <strong> <i class="fa-solid fa-hotel" style="color: black;"></i>  HOTELES REGISTRADOS</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Imagen Referencial</th>
+                                                <th>Nombre</th>
+                                                <th>Capacidad</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item : ${listaHotels}">
+                                                <td th:text="${item.hotel_id}"></td>
+                                                <td>
+                                                    <img style="width: auto; height:100px;"
+                                                         th:src="'data:image/jpg;base64,' + ${item.hotel_imagen}"
+                                                         alt="Imagen referencial del vuelo"/>
+                                                </td>
+                                                <td th:text="${item.hotel_nombre}"></td>
+                                                <td th:text="${item.hotel_capacidad}"></td>
+                                                <td th:text="${item.hotel_precio}"></td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-warning botonEditar"
+                                                    th:data-hotel_id="${item.hotel_id}"
+                                                    th:data-hotel_imagen="${item.hotel_imagen}"
+                                                    th:data-hotel_nombre="${item.hotel_nombre}"
+                                                    th:data-hotel_capacidad="${item.hotel_capacidad}"
+                                                    th:data-hotel_precio="${item.hotel_precio}">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        Editar
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger" th:href="@{/hotel/eliminar/} + ${item.hotel_id}" 
+                                                    onclick="return confirm('¿Desea eliminar el hotel seleccionado?')">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Eliminar</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin de Tabla-->
+                    </div>
+                </main>
+                <footer th:replace="Layout/fragmentos :: ffooter"></footer>
+            </div>
+            <!-- Modal -->
+    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Hotel</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form th:action="@{/hotel/guardar}" th:object="${hotel}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <!-- Texto -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <input type="hidden" name="hotel_id" id="hotel_id"/>
+                            <label>Nombre del hotel:</label>
+                            <input type="text" name="hotel_nombre" id="txtNombre" class="form-control" placeholder="Ingrese nombre"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Capacidad del Hotel:</label>
+                            <input type="number" name="hotel_capacidad" id="txtCapacidad" class="form-control" placeholder="Ingrese capacidad"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Precio del Hotel:</label>
+                            <input type="number" name="hotel_precio" id="txtPrecio" class="form-control" placeholder="Ingrese precio"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Imagen Referencial</label>
+                            <input id="txtImagen" name="file" accept="image/*" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-ban"></i>
+                            Cancelar
+                        </button>
+                            <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Guardar Cambios
+                        </button>
+                    </div>
+            </form>               
+        </div>
+        </div>
+    </div>
+        </div>
+        <div th:replace="Layout/fragmentos :: flibrerias"></div>
+        <script th:src="@{/js/libreriaHotel.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+.portafolio{
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    height: 150px;
+}
+.subtitulo {
+  padding-right: 280px;
+  margin-bottom: 150px;
+  margin: 100px;
+}
+
+.subtitulo h2 {
+  padding: 0px 0px 40px 200px;/*CENTRAMOS EL TEXTO Y DAMOS ESPACIO CON LA IMAGEN*/
+  font-size: 50px;
+  font-weight: bold;
+  color: #050303;
+  line-height: 50px;
+  text-transform: uppercase;/*CONVIERTE TODO EL TEXTO EN MAYUSCULA*/
+  position: relative;
+  display: inline-block;
+}
+.subtitulo h2::before {/*CREAR LA LINEA DEL LADO IZQUIERDO DEL TEXTO:ACERCA DE*/
+  right: 100%;
+  margin-right: -155px;
+}
+.subtitulo h2::after {/*CREAR LA LINEA DEL LADO DERECHO DEL TEXTO:ACERCA DE*/
+  left: 100%;
+  margin-left: 50px;
+}
+.subtitulo h2::before,
+.subtitulo h2::after {/*CREAR COLOR DE LA LINEA DEL COSTADO DEL TEXTO:ACERCA DE*/
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 5px solid #13aba6;/*GROSOR DE LA LINEA CREADA*/
+  top: 27px;
+  width: 290px;
+}
+.mover{
+  margin-top: 30px;
+}
+.mover1{
+margin-top: 20px;
+text-align: left;
+}
+.mover2{
+  margin-top: -10px;
+  text-align: left;
+  color: rgb(105, 102, 102);
+  }
+.mover3{
+  margin-top: -10px;
+  text-align: left;
+  }
+  .boton_compra{
+    padding-bottom: 50px;
+    text-align: right;
+    margin-right: 520px;
+    margin-top: -20px;
+  }
+  .moverNuevo{
+    padding-top: 30px;
+  
+  }
+  .imgNuevo{
+    width: 100%;
+  }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/css/registrarse_vuelo.css}">
+   
+  <style>
+    .container {
+      max-width: 350px;
+      margin-top: 80px;
+      margin-left: 100px;
+    }
+  </style>
+
+</head>
+<body>
+  <img  class="logo_avion" th:src="@{/Imagenes/Avion_Fondo.png}" alt="avion">
+    <div class="container">
+      <h3 class="mb-4">REGISTRAR VUELO</h3>
+      <form th:action="@{/vuelo/guardar}" th:object="${vuelo}" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label >Destino del Vuelo:</label>
+            <input th:field="*{vuelo_destino}" type="text" class="form-control" placeholder="Ingrese Destino del Vuelo" required>
+          </div>
+          <div class="form-group">
+            <label >Origen del Vuelo:</label>
+            <input th:field="*{vuelo_origen}" type="text" class="form-control" placeholder="Ingrese Origen del Vuelo" required>
+          </div>
+          <div class="form-group">
+            <label >Precio del Vuelo:</label>
+            <input th:field="*{vuelo_precio}" type="text" class="form-control"  placeholder="Ingrese Precio del Vuelo" required>
+          </div>
+          <div>
+            <label>Imagen Referencial</label>
+            <input name="file" accept="image/*" type="file" class="form-control" />
+        </div>
+          <div class="form-group">
+            <label >Aerolinea del Vuelo:</label>
+            <input th:field="*{vuelo_aerolinea}" type="text" class="form-control"  placeholder="Ingrese Aerolínea del Vuelo " required>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <a  style="font-weight: bold; color: #ffffff; " th:href="@{/dashboard/}"><i class="fa-solid fa-rotate-left"></i> Regresar al Dashboard</a>
+      </form>
+    </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

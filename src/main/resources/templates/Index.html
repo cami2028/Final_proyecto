@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de viajes</title>
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/28e0b35790.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script th:src="@{/JS/index.js}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+        </div>
+        <div class="container-fluid menu">
+                <a class="navbar-brand logo" th:href="@{/}">ADVENTOURS</a>
+                <img src="Imagenes/LOGO.3.png" alt="Logo" class="logo_img">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Vuelos}">VUELOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Hoteles}">HOTELES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Tours}">TOURS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/Contacto}">CONTACTO</a>
+              </li>
+            </ul>
+          </div>
+         </div>
+      </nav>
+
+      
+<!--Carrusel-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/Agencia fondo.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover">
+        <h5 >
+          Descubre <br><span>el Perú con nosotros</span> 
+        </h5>
+        <p>Somos apasionados por descubrir destinos fascinantes,<br>
+           crear experiencias memorables y convertir tus sueños viajeros en realidad.<br>
+            Ya sea que busques relajarte en playas paradisíacas, explorar culturas <br> 
+            historicas creando vivencias inimaginables o sumergirte en la naturaleza<br> 
+            exuberante del Perú, estamos aquí para guiarte en cada paso del camino.</p>
+      </div>
+    </div>
+    <div class="carousel-item altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/Colca.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover2">
+        <h5>El valle del Colca,<br> <span>experiencia de alto riesgo</span> </h5>
+        <p>Porque en el Cañón del Colca puedes conectarte con tu lado más aventurero <br>
+          y practicar trekking, rafting o ciclismo de montaña, actividades que cada vez van <br>
+          ganando más adeptos por estos lugares. Una vez que te hayas conectado con la naturaleza,<br> 
+          prueba ver los asombrosos escenarios llenos de vegetación, hasta llegar a uno de los puntos <br>
+          cumbres del Colca, donde desde un mirador los turistas están expectantes <br>
+          a las apariciones de los majestuosos cóndores.</p>
+      </div>
+    </div>
+    <div class="carousel-item altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/Machu Picchu.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover3">
+        <h5>Machu Picchu,<br><span>una de las maravillas<br> del mundo</span></h5>
+        <p>Una exploración de tiempo, cultura y tradición.<br> 
+          Mechu Picchu es una ciudad echa historia, <br>
+          una forma de reecontrarnos con nuestro<br> 
+          pasado y en el presente mismo.</p>
+      </div>
+    </div>
+    <div class="carousel-item altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/amazonas2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover">
+        <h5>Amazonas,<br><span>el misterioso pulmón<br> del mundo</span></h5>
+        <p>Un lugar lleno de misterios, diversidad variada en la<br> 
+          flora y fauna, además, podrás vivir diferentes experiencias<br> 
+          aprendiendo de diferentes poblados ubicados a lo largo<br> 
+          y ancho de todo el paisaje</p>
+      </div>
+    </div>
+    <div class="carousel-item altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/Punta Sal.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover">
+        <h5>Punta Sal,<br><span>una maravilla del<br> norte chico del Perú</span></h5>
+        <p>En el norte del Perú, en el departamento de Tumbes, se encuentra un lugar mágico<br> 
+          donde la vida se goza en perfecta armonía con las mareas del océano. Donde el mar<br> 
+          y el sol conviven todos los días del año. Un paraíso exclusivo y protegido para aquellos<br> 
+          que buscan unas vacaciones privadas y de descanso absoluto.</p>
+      </div>
+    </div>
+    <div class="carousel-item altoImagen" data-bs-interval="7000">
+      <img src="Imagenes/Ancash.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block mover3">
+        <h5>Anchas, <br><span>una maravilla de altura</span></h5>
+        <p>Custodiada por las cordilleras Negra y Blanca, Áncash es el lugar indicado<br> 
+          para conectarte con los Andes peruanos y su milenaria historia. En esta <br>
+          región al norte de Lima, los amantes del andinismo y del trekking, gozarán <br>
+          como en ningún otro lugar en la tierra: aquí se ubica el mítico Callejón de <br>
+          Huaylas y es donde encuentras la preciosa Laguna de Llanganuco; <br>
+          estamos hablando de la cuna de la cultura Chavín y su legado, que puede ser <br>
+          presenciada hasta hoy en día. Áncash tiene mucho que ofrecer y los viajeros, <br>
+          aventureros y turistas, aún mucho más por descubrir.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--Acerca de -->
+<div id="traveling">
+  <br><br>
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-12 ">
+           <div class="titlepage text-center">
+              <h2>Opciones para Viajar</h2>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="container-fluid posicion_iconos">
+    <div class="row">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-1">
+         <div class="traveling-box">
+            <i><img src="Imagenes/offer1.png" alt="icon" style="max-width: 100%; height: auto;"/></i>
+            <h3>Diferentes Países</h3>
+         </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+         <div class="traveling-box">
+            <i><img src="Imagenes/offer2.png" alt="icon" style="max-width: 100%; height: auto;"/></i>
+            <h3>Excursiones por Montañas</h3>
+         </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+         <div class="traveling-box">
+            <i><img src="Imagenes/offer3.png" alt="icon" style="max-width: 100%; height: auto;"/></i>
+            <h3>Excursiones por Bus</h3>
+         </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+         <div class="traveling-box">
+            <i><img src="Imagenes/offer4.png" alt="icon" style="max-width: 100%; height: auto;"/></i>
+            <h3>Descanso de Verano</h3>
+         </div>
+      </div>
+  </div>
+  
+ </div>
+</div>
+
+<!--Opciones de Aventuras-->
+<br><br>
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-md-12 ">
+        <div class="titlepage text-center">
+           <h2>Acerca de nuestra agencia</h2>
+        </div>
+     </div>
+  </div>
+</div>
+<div id="about" class="about">
+     <div class="container-fluid">
+              <div class="about-box">
+                 <p> <span>Desde nuestros humildes comienzos, hemos ampliado nuestros horizontes y hemos explorado destinos en todo el mundo. Desde las playas de arena blanca del Caribe hasta las montañas majestuosas de los Alpes, hemos buscado incansablemente los lugares más fascinantes y auténticos para ofrecer a nuestros clientes.
+                  Nuestro equipo está compuesto por expertos en viajes apasionados, con un profundo conocimiento de los destinos y una pasión por brindar experiencias memorables. Nos esforzamos por personalizar cada viaje, adaptándonos a las preferencias individuales de nuestros clientes y creando itinerarios que superen sus expectativas.</span></p>
+                 <div class="palne-img-area">
+                    <img src="Imagenes/plane-img.png" alt="images" style="max-width: 100%; height: auto;">
+                 </div>
+              </div>
+     </div>
+</div>
+
+<div id="" class="traveling">
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-12 ">
+           <div class="titlepage">
+              <h2>Mejores Destinos Turísticos</h2>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="container-fluid">
+       <div class="ajuste1">
+          <i><img src="Imagenes/imagen fondo.jpg" alt="icon" style="max-width: 140%; height: auto;"/></i>
+       </div>
+   </div>
+</div>
+
+<!-- inicio sección servicio  -->
+<section class="service_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h2 class="custom_heading">
+            Nuestros <span>Servicios</span>
+          </h2>
+          <div class="container ">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="img_box">
+                  <a th:href="@{/Vuelos}">
+                    <i class="fa-solid fa-plane-departure fa-beat avionsito"></i>
+                  </a>
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Vuelos
+                  </h6>
+                  <p>
+                    Especialistas, en darte el mejor precio en vuelos.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <a th:href="@{/Hoteles}">
+                    <i class="fa-solid fa-hotel fa-beat hotelsito"></i>
+                  </a>
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Hoteles
+                  </h6>
+                  <p>
+                    Realizamos las mejores cotizaciones.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <a th:href="@{/Tours}">
+                    <i class="fa-solid fa-bus fa-beat toursito"></i>
+                  </a>
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Tours
+                  </h6>
+                  <p>
+                    Dirigido a todo el público, para que puedas conocer los mejores lugares.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- final seccion servicio -->
+        <!-- Mapa -->
+          <div class="container-fluid colormap">
+            <div class="row">
+              <p class="mptexto">Encuéntranos en...</p>
+              <div id="map"></div>
+            </div>
+          </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      <!-- Pie de página 
+-->
+<footer>
+  <div class="container-fluid">
+    
+    <div class="row">
+      <div class="col-3 ft">
+        <p class="footertext">Acerca de</p>
+        <a class="nav-link mb-3" href="#">Terminos y condiciones</a>
+        <a class="nav-link" href="#">Información legal</a>
+      </div>
+      <div class="col-3 ft">
+        <p class="footertext">
+          Contacto</p>
+        <p>agenciadeviajes@correo.com</p>
+        <p>Av. Tingo María 1122, Lima 15083</p>
+      </div>
+      
+      <div class="col-3 ft">
+        <p class="footertext">Redes sociales</p>
+        <a class="fa-brands fa-facebook fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-x-twitter fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-instagram fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-tiktok fa-2xl nav-link espacio" href=""></a>
+        <a class="fa-brands fa-whatsapp fa-2xl nav-link espacio" href=""></a>
+      </div>
+      <p class="copy">&copy; 2023 Agencia de viajes. Todos los derechos reservados.</p>
+      <a th:href="@{/Login}"><span class="fa-solid fa-right-to-bracket fa-2xl"></span> ¿Eres parte de nosotros?</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+<script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+          defer
+        ></script>
+</html>

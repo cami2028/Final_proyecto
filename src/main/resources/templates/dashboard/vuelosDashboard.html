@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="Layout/fragmentos :: fcabecera"></head>
+    <body class="sb-nav-fixed">
+        <nav th:replace="Layout/fragmentos ::fnav"></nav>
+        <div id="layoutSidenav">
+            <div th:replace="Layout/fragmentos ::fmenu"></div>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <!--Tabla LISTA DE VUELOS REGISTRADOS-->
+                        <br><br>
+                        <div class="card">
+                            <div class="card-header">
+                                <strong> <i class="fa-solid fa-plane-departure" style="color: black;"></i> VUELOS REGISTRADOS</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Imagen Referencial</th>
+                                                <th>Destino</th>
+                                                <th>Origen</th>
+                                                <th>Precio</th>
+                                                <th>Aerolínea</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item : ${listaVuelos}">
+                                                <td th:text="${item.vuelo_id}"></td>
+                                                <td>
+                                                    <img style="width: auto; height:100px;"
+                                                         th:src="'data:image/jpg;base64,' + ${item.vuelo_imagen}"
+                                                         alt="Imagen referencial del vuelo"/>
+                                                </td>
+                                                <td th:text="${item.vuelo_destino}"></td>
+                                                <td th:text="${item.vuelo_origen}"></td>
+                                                <td th:text="${item.vuelo_precio}"></td>
+                                                <td th:text="${item.vuelo_aerolinea}"></td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-warning botonEditar"
+                                                    th:data-vuelo_id="${item.vuelo_id}"
+                                                    th:data-vuelo_destino="${item.vuelo_destino}"
+                                                    th:data-vuelo_origen="${item.vuelo_origen}"
+                                                    th:data-vuelo_precio="${item.vuelo_precio}"
+                                                    th:data-vuelo_imagen="${item.vuelo_imagen}"
+                                                    th:data-vuelo_aerolinea="${item.vuelo_aerolinea}">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        Editar
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger" th:href="@{/vuelo/eliminar/} + ${item.vuelo_id}" 
+                                                    onclick="return confirm('¿Desea eliminar el vuelo seleccionado?')">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Eliminar</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin de Tabla-->
+                    </div>
+                </main>
+                <footer th:replace="Layout/fragmentos :: ffooter"></footer>
+            </div>
+            <!-- Modal -->
+    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Vuelo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form th:action="@{/vuelo/guardar}" th:object="${vuelo}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <!-- Texto -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <input type="hidden" name="vuelo_id" id="vuelo_id"/>
+                            <label>Destino del vuelo:</label>
+                            <input type="text" name="vuelo_destino" id="txtDestino" class="form-control" placeholder="Ingrese destino"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Origen del vuelo:</label>
+                            <input type="text" name="vuelo_origen" id="txtOrigen" class="form-control" placeholder="Ingrese origen"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Precio del vuelo:</label>
+                            <input type="number" name="vuelo_precio" id="txtPrecio" class="form-control" placeholder="Ingrese precio"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Imagen Referencial</label>
+                            <input id="txtImagen" name="file" accept="image/*" type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label>Aerolínea del vuelo:</label>
+                            <input type="text" name="vuelo_aerolinea" id="txtAerolinea" class="form-control" placeholder="Ingrese la aerolínea"/>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-ban"></i>
+                            Cancelar
+                        </button>
+                            <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Guardar Cambios
+                        </button>
+                    </div>
+            </form>               
+        </div>
+        </div>
+    </div>
+        </div>
+        <div th:replace="Layout/fragmentos :: flibrerias"></div>
+        <script th:src="@{/js/libreriaVuelo.js}"></script>
+    </body>
+</html>

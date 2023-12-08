@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:fragment="fcabecera">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>
+            Adventours
+        </title>
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link th:href="@{/css/estilo.css}" rel="stylesheet" />
+        <link th:href="@{css/index.css}" rel="stylesheet"/>
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav th:fragment="fnav" class="sb-topnav navbar navbar-expand navbar-dark bg-dark"  style="background-color: rgb(46, 108, 136) !important;">
+            <!-- Navbar Brand-->
+            <img th:src="@{/Imagenes/LOGO.3.png}" alt="Logo" style="max-width: 200px; /* Ajusta el tamaño del logo según tus necesidades */
+            margin-right: -80px; /* Espacio entre el logo y el texto */
+            margin-bottom: -60px;
+            margin-left: -65px;
+            margin-top: -10px;" >
+            <a class="navbar-brand ps-3" th:href="@{/dashboard/}">Adventours</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars" style="margin-left:-160px;"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+
+                </div>
+            </form>
+            <!-- Navbar-->
+            <!-- Aqui se coloca el nombre del USUARIO que ha ingresado al DASHBOARD-->
+            <span class="text-white">
+                <strong sec:authentication="name"></strong>
+            </span>
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!"><i class="fa-solid fa-user-gear"></i> Configuración</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            <form th:action="@{/logout}" method="post" onclick="return confirm('¿Desea cerrar la sesión??')" >
+                <button class="btn btn-light" type="submit" style="background-color: #bd4f41 !important ; color: #ffffff;">
+                   Cerrar Sesion 
+                </button>
+            </form>
+
+        </nav>
+        <div id="layoutSidenav">
+            <div  id="layoutSidenav_nav" th:fragment="fmenu">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style="background-color: rgb(46, 108, 136) !important;">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Menú principal</div>
+                            <a class="nav-link opMenu" id="mVuelo" th:href="@{/vuelo/}" data-bs-toggle="collapse" data-bs-target="#VUELOS" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-plane-departure" style="color: #ffffff;"></i></div>
+                                Vuelos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse " id="VUELOS" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link opMenu" id="mVuelo" th:href="@{/vuelo/registrar}" ><i class="fa-solid fa-plus" style="color: #ffffff;"></i> 
+                                    <i class="fa-solid fa-plane-departure" style="color: #ffffff;"></i> REGISTRAR VUELOS</a>
+                                    <a class="nav-link opMenu" id="mVuelo" th:href="@{/vuelo/}"><i class="fa-solid fa-clipboard-list" style="color: #ffffff;"></i> LISTA DE VUELOS REGISTRADOS</a>
+                                </nav>                  
+                            </div>   
+
+                            <a class="nav-link opMenu" id="mHotel" th:href="@{/hotel/}" data-bs-toggle="collapse" data-bs-target="#HOTELES" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-hotel" style="color: #ffffff;"></i></div>
+                                Hoteles
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse " id="HOTELES" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link opMenu" id="mHotel" th:href="@{/hotel/registrar}" ><i class="fa-solid fa-plus" style="color: #ffffff;"></i> 
+                                        <i class="fa-solid fa-hotel" style="color: #ffffff;"></i> REGISTRAR HOTEL</a>
+                                    <a class="nav-link opMenu" id="mHotel" th:href="@{/hotel/}"><i class="fa-solid fa-clipboard-list" style="color: #ffffff;"></i> LISTA DE HOTELES REGISTRADOS</a>
+                                </nav>                  
+                            </div>   
+                            <a class="nav-link opMenu" id="mTour" th:href="@{/tour/}" data-bs-toggle="collapse" data-bs-target="#TOURS" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-route" style="color: #ffffff;"></i></div>
+                                Tours
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse " id="TOURS" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link opMenu" id="mTour" th:href="@{/tour/registrar}"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><i class="fa-solid fa-route" style="color: #ffffff;"></i>  REGISTRAR TOUR</a>
+                                    <a class="nav-link opMenu" id="mTour" th:href="@{/tour/}"><i class="fa-solid fa-clipboard-list" style="color: #ffffff;"></i> LISTA DE TOURS REGISTRADOS</a>
+                                </nav>                  
+                            </div>   
+                            <a class="nav-link opMenu" id="mUsuarios" th:href="@{/usuario/}"data-bs-toggle="collapse" data-bs-target="#USUARIOS" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user " style="color: #ffffff;"></i></div>
+                                Usuarios
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse " id="USUARIOS" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link opMenu" id="mUsuarios" th:href="@{/usuario/registrar}" ><i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>  REGISTRAR USUARIO</a>
+                                    <a class="nav-link opMenu" id="mUsuarios" th:href="@{/usuario/}"><i class="fa-solid fa-clipboard-list" style="color: #ffffff;"></i> LISTA DE USUARIOS REGISTRADOS</a>
+                                </nav>                  
+                            </div>
+                                <a class="nav-link opMenu" id="mContacto" th:href="@{/contacto/}"><i class="fa-solid fa-clipboard-list" style="color: #ffffff; margin-right: 8px;" ></i> Contactar</a>
+                            </div>
+                    </div>
+                    <div class="sb-sidenav-footer" style="background-color: #bd4f41 !important;">
+                        <div class="small">Inició sesión como:</div>
+                        Administrador
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>  
+
+
+                </main>
+                <footer class="py-4 bg-light mt-auto" th:fragment="ffooter">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small" >
+                            <div class="text-muted">Copyright &copy; Adventours 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div th:fragment="flibrerias">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script th:src="@{/js/scripts.js}"></script>
+        </div>
+    </body>
+</html>
